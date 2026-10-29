@@ -433,7 +433,7 @@ export default async function Portada({ idioma }: { idioma: Idioma }) {
         <a className={CTA_LINK} href={AGENDAR} target="_blank" rel="noopener noreferrer">
           {t.cierre.agendar}
         </a>
-        <a className={CTA_LINK} href="mailto:contacto@aisafetycolombia.org">
+        <a className={CTA_LINK} href="mailto:equipo@aisafetycolombia.org">
           {t.cierre.escribir}
         </a>
       </CtaPanel>

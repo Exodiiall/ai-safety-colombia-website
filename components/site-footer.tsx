@@ -57,7 +57,7 @@ const TEXTOS: Record<Idioma, {
 
 /* La columna de comunidad: el correo y después las redes con su marca. */
 const COMUNIDAD = [
-  { href: "mailto:contacto@aisafetycolombia.org", label: "contacto@aisafetycolombia.org" },
+  { href: "mailto:equipo@aisafetycolombia.org", label: "equipo@aisafetycolombia.org" },
 ];
 
 const REDES = [

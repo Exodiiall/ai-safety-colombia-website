@@ -136,7 +136,7 @@ export default function SeminarioConfirmForm({
       {estado === "falla" ? (
         <p className="text-body-sm mb-8 rounded-[var(--radius)] border border-aisc-coral bg-white px-4 py-3 text-aisc-coral">
           No pudimos guardar tu respuesta. Intenta de nuevo en un minuto. Si sigue fallando,
-          escríbenos a contacto@aisafetycolombia.org.
+          escríbenos a equipo@aisafetycolombia.org.
         </p>
       ) : null}
 

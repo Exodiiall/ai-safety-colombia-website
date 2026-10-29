@@ -18,7 +18,7 @@ export const RUTA_POLITICA: Record<Idioma, string> = {
   pt: "/pt/privacidade",
 };
 
-export const CORREO_DATOS = "contacto@aisafetycolombia.org";
+export const CORREO_DATOS = "equipo@aisafetycolombia.org";
 
 /* Un bloque es un párrafo o, si es una lista, sus puntos. Dentro del texto,
    **así** va en negrita y [así](/ruta) es un enlace. */
@@ -56,7 +56,7 @@ export const TEXTOS_POLITICA: Record<Idioma, TextosPolitica> = {
       { etiqueta: "Responsable", valor: "Jose Angel Gelves Cabrera" },
       { etiqueta: "Naturaleza", valor: "Persona natural" },
       { etiqueta: "Domicilio", valor: "Bogotá, Colombia" },
-      { etiqueta: "Canal de atención", valor: "contacto@aisafetycolombia.org" },
+      { etiqueta: "Canal de atención", valor: "equipo@aisafetycolombia.org" },
     ],
     secciones: [
       {
@@ -73,7 +73,7 @@ export const TEXTOS_POLITICA: Record<Idioma, TextosPolitica> = {
         ficha: true,
         bloques: [
           "AI Safety Colombia es una comunidad sin personería jurídica. Por eso el responsable del tratamiento de los datos es **Jose Angel Gelves Cabrera**, persona natural que la coordina, con domicilio en Bogotá, Colombia.",
-          "Para todo lo que tenga que ver con tus datos, escribe a **contacto@aisafetycolombia.org**. Por ese canal se atienden las consultas y los reclamos.",
+          "Para todo lo que tenga que ver con tus datos, escribe a **equipo@aisafetycolombia.org**. Por ese canal se atienden las consultas y los reclamos.",
         ],
       },
       {
@@ -160,7 +160,7 @@ export const TEXTOS_POLITICA: Record<Idioma, TextosPolitica> = {
       {
         titulo: "Procedimiento para consultas y reclamos",
         bloques: [
-          "Escribe a **contacto@aisafetycolombia.org** desde el correo con el que nos diste tus datos, con tu nombre, lo que pides y, si es un reclamo, los hechos y cualquier documento que lo sustente.",
+          "Escribe a **equipo@aisafetycolombia.org** desde el correo con el que nos diste tus datos, con tu nombre, lo que pides y, si es un reclamo, los hechos y cualquier documento que lo sustente.",
           [
             "**Consultas** (qué datos tenemos y cómo los usamos): respondemos en un máximo de 10 días hábiles. Si no alcanzamos, te avisamos antes y respondemos en máximo 5 días hábiles más.",
             "**Reclamos** (corrección, actualización, supresión o revocatoria): respondemos en un máximo de 15 días hábiles. Si no alcanzamos, te avisamos antes y respondemos en máximo 8 días hábiles más. Si al reclamo le falta información, te la pedimos en los 5 días siguientes; si no la recibimos en dos meses, entendemos que desististe.",
@@ -206,7 +206,7 @@ export const TEXTOS_POLITICA: Record<Idioma, TextosPolitica> = {
       { etiqueta: "Controller", valor: "Jose Angel Gelves Cabrera" },
       { etiqueta: "Status", valor: "Natural person" },
       { etiqueta: "Domicile", valor: "Bogotá, Colombia" },
-      { etiqueta: "Contact", valor: "contacto@aisafetycolombia.org" },
+      { etiqueta: "Contact", valor: "equipo@aisafetycolombia.org" },
     ],
     secciones: [
       {
@@ -223,7 +223,7 @@ export const TEXTOS_POLITICA: Record<Idioma, TextosPolitica> = {
         ficha: true,
         bloques: [
           "AI Safety Colombia is a community without legal personhood. That is why the data controller is **Jose Angel Gelves Cabrera**, the individual who coordinates it, domiciled in Bogotá, Colombia.",
-          "For anything to do with your data, write to **contacto@aisafetycolombia.org**. Enquiries and complaints are handled through that address.",
+          "For anything to do with your data, write to **equipo@aisafetycolombia.org**. Enquiries and complaints are handled through that address.",
         ],
       },
       {
@@ -310,7 +310,7 @@ export const TEXTOS_POLITICA: Record<Idioma, TextosPolitica> = {
       {
         titulo: "Procedure for enquiries and complaints",
         bloques: [
-          "Write to **contacto@aisafetycolombia.org** from the email you gave us, with your name, what you are asking for and, if it is a complaint, the facts and any supporting documents.",
+          "Write to **equipo@aisafetycolombia.org** from the email you gave us, with your name, what you are asking for and, if it is a complaint, the facts and any supporting documents.",
           [
             "**Enquiries** (what data we hold and how we use it): we reply within 10 business days at most. If we can't, we let you know beforehand and reply within 5 more business days at most.",
             "**Complaints** (correction, update, deletion or withdrawal): we reply within 15 business days at most. If we can't, we let you know beforehand and reply within 8 more business days at most. If a complaint is missing information, we ask for it within the next 5 days; if we don't receive it within two months, we consider it withdrawn.",
@@ -356,7 +356,7 @@ export const TEXTOS_POLITICA: Record<Idioma, TextosPolitica> = {
       { etiqueta: "Responsável", valor: "Jose Angel Gelves Cabrera" },
       { etiqueta: "Natureza", valor: "Pessoa física" },
       { etiqueta: "Domicílio", valor: "Bogotá, Colômbia" },
-      { etiqueta: "Canal de atendimento", valor: "contacto@aisafetycolombia.org" },
+      { etiqueta: "Canal de atendimento", valor: "equipo@aisafetycolombia.org" },
     ],
     secciones: [
       {
@@ -373,7 +373,7 @@ export const TEXTOS_POLITICA: Record<Idioma, TextosPolitica> = {
         ficha: true,
         bloques: [
           "A AI Safety Colombia é uma comunidade sem personalidade jurídica. Por isso o controlador dos dados é **Jose Angel Gelves Cabrera**, pessoa física que a coordena, com domicílio em Bogotá, Colômbia.",
-          "Para qualquer assunto sobre seus dados, escreva para **contacto@aisafetycolombia.org**. As consultas e reclamações são atendidas por esse canal.",
+          "Para qualquer assunto sobre seus dados, escreva para **equipo@aisafetycolombia.org**. As consultas e reclamações são atendidas por esse canal.",
         ],
       },
       {
@@ -460,7 +460,7 @@ export const TEXTOS_POLITICA: Record<Idioma, TextosPolitica> = {
       {
         titulo: "Procedimento para consultas e reclamações",
         bloques: [
-          "Escreva para **contacto@aisafetycolombia.org** do e-mail com que nos passou seus dados, com seu nome, o que você pede e, se for uma reclamação, os fatos e qualquer documento que a sustente.",
+          "Escreva para **equipo@aisafetycolombia.org** do e-mail com que nos passou seus dados, com seu nome, o que você pede e, se for uma reclamação, os fatos e qualquer documento que a sustente.",
           [
             "**Consultas** (que dados temos e como os usamos): respondemos em no máximo 10 dias úteis. Se não der, avisamos antes e respondemos em no máximo mais 5 dias úteis.",
             "**Reclamações** (correção, atualização, exclusão ou revogação): respondemos em no máximo 15 dias úteis. Se não der, avisamos antes e respondemos em no máximo mais 8 dias úteis. Se faltar informação na reclamação, pedimos nos 5 dias seguintes; se não a recebermos em dois meses, entendemos que você desistiu.",

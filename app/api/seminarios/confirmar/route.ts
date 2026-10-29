@@ -13,8 +13,8 @@ import {
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const CORREO_CONTACTO = "contacto@aisafetycolombia.org";
-const REMITENTE = "AI Safety Colombia <contacto@aisafetycolombia.org>";
+const CORREO_CONTACTO = "equipo@aisafetycolombia.org";
+const REMITENTE = "AI Safety Colombia <equipo@aisafetycolombia.org>";
 const TABLA = "seminar_confirmations";
 
 /* El mismo límite flojo de /api/confirmar: varias personas confirman desde la

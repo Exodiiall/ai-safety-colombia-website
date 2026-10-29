@@ -383,7 +383,7 @@ export default function Pesquisa() {
             <div className="text-body md:text-body-lg flex flex-col gap-4 text-aisc-ink">
               <p>
                 A lista está aberta. Se você é da comunidade e publicou algo,{" "}
-                <a className={ENLACE} href="mailto:contacto@aisafetycolombia.org">
+                <a className={ENLACE} href="mailto:equipo@aisafetycolombia.org">
                   escreva para nós
                 </a>{" "}
                 e nós acrescentamos.

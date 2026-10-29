@@ -362,8 +362,8 @@ export default function HackathonApplyForm({
         <div className="mb-8 rounded-[var(--radius)] border border-aisc-coral bg-aisc-coral/8 p-5">
           <p className="text-body-sm text-aisc-ink">
             {t.fallaAntes}
-            <a className={ENLACE} href="mailto:contacto@aisafetycolombia.org">
-              contacto@aisafetycolombia.org
+            <a className={ENLACE} href="mailto:equipo@aisafetycolombia.org">
+              equipo@aisafetycolombia.org
             </a>
             {t.fallaDespues}
           </p>
@@ -804,8 +804,8 @@ export default function HackathonApplyForm({
           ) : null}
           <p className="text-meta mt-4 text-aisc-muted">
             {corta ? t.privacidadCortaAntes : t.privacidadAntes}
-            <a className={ENLACE} href="mailto:contacto@aisafetycolombia.org">
-              contacto@aisafetycolombia.org
+            <a className={ENLACE} href="mailto:equipo@aisafetycolombia.org">
+              equipo@aisafetycolombia.org
             </a>
             {t.privacidadDespues}
           </p>

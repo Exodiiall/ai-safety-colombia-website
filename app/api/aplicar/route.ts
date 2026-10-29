@@ -9,8 +9,8 @@ import {
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const CORREO_CONTACTO = "contacto@aisafetycolombia.org";
-const REMITENTE = "AI Safety Colombia <contacto@aisafetycolombia.org>";
+const CORREO_CONTACTO = "equipo@aisafetycolombia.org";
+const REMITENTE = "AI Safety Colombia <equipo@aisafetycolombia.org>";
 const TABLA = "sprint_applications";
 
 /* Límite por IP: ocho envíos cada diez minutos. Vive en memoria, así que solo

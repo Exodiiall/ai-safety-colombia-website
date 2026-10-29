@@ -16,8 +16,8 @@ import { POLITICA_VERSION, RUTA_POLITICA } from "@/lib/politica-datos";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const CORREO_CONTACTO = "contacto@aisafetycolombia.org";
-const REMITENTE = "Jose Gelves <contacto@aisafetycolombia.org>";
+const CORREO_CONTACTO = "equipo@aisafetycolombia.org";
+const REMITENTE = "Jose Gelves <equipo@aisafetycolombia.org>";
 const TABLA = "course_applications";
 const RONDA = "2026-10";
 

@@ -517,8 +517,8 @@ export default function CourseApplyForm({
         <div className="mb-8 rounded-[var(--radius)] border border-aisc-coral bg-aisc-coral/8 p-5">
           <p className="text-body-sm text-aisc-ink">
             {t.fallaAntes}
-            <a className={ENLACE} href="mailto:contacto@aisafetycolombia.org">
-              contacto@aisafetycolombia.org
+            <a className={ENLACE} href="mailto:equipo@aisafetycolombia.org">
+              equipo@aisafetycolombia.org
             </a>
             {t.fallaDespues}
           </p>
@@ -811,8 +811,8 @@ export default function CourseApplyForm({
           </div>
           <p className="text-meta mt-6 text-aisc-muted">
             {t.privacidadAntes}
-            <a className={ENLACE} href="mailto:contacto@aisafetycolombia.org">
-              contacto@aisafetycolombia.org
+            <a className={ENLACE} href="mailto:equipo@aisafetycolombia.org">
+              equipo@aisafetycolombia.org
             </a>
             {t.privacidadDespues}
           </p>

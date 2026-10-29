@@ -382,7 +382,7 @@ export default function Investigacion() {
             <div className="text-body md:text-body-lg flex flex-col gap-4 text-aisc-ink">
               <p>
                 La lista está abierta. Si eres de la comunidad y publicaste algo,{" "}
-                <a className={ENLACE} href="mailto:contacto@aisafetycolombia.org">
+                <a className={ENLACE} href="mailto:equipo@aisafetycolombia.org">
                   escríbenos
                 </a>{" "}
                 y lo agregamos.

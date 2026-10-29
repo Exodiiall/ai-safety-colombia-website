@@ -383,7 +383,7 @@ export default function Research() {
             <div className="text-body md:text-body-lg flex flex-col gap-4 text-aisc-ink">
               <p>
                 The list is open. If you are part of the community and you published something,{" "}
-                <a className={ENLACE} href="mailto:contacto@aisafetycolombia.org">
+                <a className={ENLACE} href="mailto:equipo@aisafetycolombia.org">
                   write to us
                 </a>{" "}
                 and we will add it.

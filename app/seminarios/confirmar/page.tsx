@@ -92,9 +92,9 @@ function Aviso({ titulo, texto }: { titulo: string; texto: string }) {
         Escríbenos a{" "}
         <a
           className="text-aisc-forest transition-colors hover:text-aisc-coral"
-          href="mailto:contacto@aisafetycolombia.org"
+          href="mailto:equipo@aisafetycolombia.org"
         >
-          contacto@aisafetycolombia.org
+          equipo@aisafetycolombia.org
         </a>{" "}
         y lo resolvemos.
       </p>
