@@ -344,6 +344,9 @@ const OTROS = [
   },
 ];
 
+// Sección de publicaciones de la comunidad: oculta por ahora (poner en true para volver a mostrarla).
+const MOSTRAR_PUBLICACIONES = false;
+
 const ENLACE =
   "text-aisc-forest transition-colors hover:text-aisc-coral";
 
@@ -374,6 +377,7 @@ export default function Investigacion() {
         </div>
       </section>
 
+      {MOSTRAR_PUBLICACIONES && (
       <section id="publicaciones" className="bg-aisc-cream">
         <div className="mx-auto w-full max-w-[1448px] px-8 md:px-16 pt-14 pb-14 md:pb-16">
           <div aria-hidden="true" className="h-px w-full flex-none bg-aisc-forest-deep" />
@@ -439,6 +443,7 @@ export default function Investigacion() {
           </ul>
         </div>
       </section>
+      )}
 
       <section id="hackathons" className="bg-aisc-cream">
         <div className="mx-auto w-full max-w-[1448px] px-8 md:px-16 pb-14 md:pb-16">
