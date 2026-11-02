@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { CIERRE_INSCRIPCIONES_ISO, CORREO_HACKATHON } from "@/app/defacchackathon/datos";
+import { CIERRE_INSCRIPCIONES_ISO, CORREO_HACKATHON, inscripcionesIniciadas } from "@/app/defacchackathon/datos";
 import { POLITICA_VERSION } from "@/lib/politica-datos";
 
 export const runtime = "nodejs";
@@ -272,6 +272,14 @@ export async function POST(req: Request) {
     return NextResponse.json(
       { ok: false, error: "bad_json", mensaje: "Formato de datos no válido." },
       { status: 400 },
+    );
+  }
+
+  // Apertura de inscripciones
+  if (!inscripcionesIniciadas()) {
+    return NextResponse.json(
+      { ok: false, error: "not_started", mensaje: "Las inscripciones al hackathon aún no han iniciado." },
+      { status: 403 },
     );
   }
 

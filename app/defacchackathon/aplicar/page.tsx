@@ -5,7 +5,7 @@ import DefAccApplyForm from "@/components/defacc-apply-form";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 import { HERO_CORNER_CLASS, HERO_INNER, HERO_SECTION, PAGE_SHELL } from "@/components/ui";
-import { inscripcionesCerradas } from "../datos";
+import { inscripcionesCerradas, inscripcionesIniciadas } from "../datos";
 import { alternativas } from "@/lib/idiomas";
 
 export const metadata: Metadata = {
@@ -22,6 +22,7 @@ export const dynamic = "force-dynamic";
 
 export default async function AplicarDefAcc() {
   const cerrado = inscripcionesCerradas();
+  const noIniciado = !inscripcionesIniciadas();
 
   return (
     <main className={PAGE_SHELL}>
@@ -68,7 +69,7 @@ export default async function AplicarDefAcc() {
 
       <section className="bg-aisc-sand">
         <div className="mx-auto w-full max-w-[900px] px-6 pt-12 pb-16 md:px-8 md:pt-16 md:pb-20">
-          {!cerrado ? (
+          {!cerrado && !noIniciado ? (
             <div className="mb-8 rounded-[var(--radius)] border border-aisc-line bg-white/70 p-5 backdrop-blur-sm flex flex-col gap-2.5">
               <p className="text-body-sm font-medium text-aisc-forest-deep">
                 Información clave antes de llenar el formulario:
@@ -99,7 +100,7 @@ export default async function AplicarDefAcc() {
             </div>
           ) : null}
 
-          <DefAccApplyForm cerrado={cerrado} idioma="es" />
+          <DefAccApplyForm cerrado={cerrado} noIniciado={noIniciado} idioma="es" />
         </div>
       </section>
 

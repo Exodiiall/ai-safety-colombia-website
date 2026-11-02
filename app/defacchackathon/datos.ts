@@ -6,6 +6,12 @@ export const CIERRE_INSCRIPCIONES_ISO = "2026-11-10T23:59:59-05:00";
 export const GRUPO_COMUNIDAD_WHATSAPP = "https://chat.whatsapp.com/KhjJqDNVviK3aX5S4q79EF";
 export const CORREO_HACKATHON = "equipo@aisafetycolombia.org";
 
+export const INSCRIPCIONES_INICIADAS = false;
+
+export function inscripcionesIniciadas(): boolean {
+  return INSCRIPCIONES_INICIADAS;
+}
+
 export function inscripcionesCerradas(ahora: Date = new Date()): boolean {
   return ahora.getTime() > Date.parse(CIERRE_INSCRIPCIONES_ISO);
 }
@@ -152,9 +158,9 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
     titulo: "Defensive Acceleration Hackathon",
     subtitulo: "Hackatón de IA para la defensa · Bogotá 2026",
     lema: "Un día, un reto: construir una defensa basada en inteligencia artificial contra una amenaza real.",
-    ctaAplicar: "Postularme al hackatón",
+    ctaAplicar: "Inscripciones próximamente",
     ctaVerBases: "Ver frentes temáticos",
-    estadoInscripciones: "Inscripciones abiertas hasta el martes 10 de noviembre de 2026 a las 11:59 p. m.",
+    estadoInscripciones: "Las postulaciones aún no han iniciado. Próximamente abriremos la convocatoria oficial.",
     premiosPodio: [
       {
         puesto: "Primer puesto",
@@ -432,9 +438,9 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
     titulo: "Defensive Acceleration Hackathon",
     subtitulo: "AI for Defense Hackathon · Bogotá 2026",
     lema: "One day, one challenge: build an AI-based defense against an active threat.",
-    ctaAplicar: "Apply for the Hackathon",
+    ctaAplicar: "Applications opening soon",
     ctaVerBases: "Research Tracks",
-    estadoInscripciones: "Applications open until Tuesday, November 10, 2026, 11:59 PM COT.",
+    estadoInscripciones: "Applications have not started yet. Registration will open soon.",
     premiosPodio: [
       {
         puesto: "1st Place",
@@ -670,9 +676,9 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
     titulo: "Defensive Acceleration Hackathon",
     subtitulo: "Hackathon de IA para Defesa · Bogotá 2026",
     lema: "Um dia, um desafio: construir uma defesa baseada em inteligência artificial contra uma ameaça real.",
-    ctaAplicar: "Inscrever-se no hackathon",
+    ctaAplicar: "Inscrições em breve",
     ctaVerBases: "Ver frentes de pesquisa",
-    estadoInscripciones: "Inscrições abertas até terça-feira, 10 de novembro de 2026, às 23:59 (horário de Bogotá).",
+    estadoInscripciones: "As inscrições ainda não começaram. O formulário oficial será aberto em breve.",
     premiosPodio: [
       {
         puesto: "1º Lugar",

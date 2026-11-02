@@ -62,9 +62,11 @@ const SECCION = "border-t border-aisc-line pt-8 first:border-t-0 first:pt-0";
 
 export default function DefAccApplyForm({
   cerrado = false,
+  noIniciado = false,
   idioma = "es",
 }: {
   cerrado?: boolean;
+  noIniciado?: boolean;
   idioma?: Idioma;
 }) {
   const [datos, setDatos] = useState<FormState>(VACIO);
@@ -189,6 +191,67 @@ export default function DefAccApplyForm({
   };
 
   const tPol = TEXTOS_POLITICA[idioma];
+
+  if (noIniciado) {
+    return (
+      <div className="rounded-2xl border border-aisc-line bg-white p-8 text-center shadow-xs md:p-12">
+        <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-aisc-sand text-aisc-forest-deep mb-4">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </div>
+        <h2 className="text-display-3 text-aisc-ink">
+          {idioma === "en"
+            ? "Applications Have Not Started Yet"
+            : idioma === "pt"
+            ? "As inscrições ainda não começaram"
+            : "Las postulaciones aún no han iniciado"}
+        </h2>
+        <p className="text-body mt-4 text-aisc-muted max-w-lg mx-auto">
+          {idioma === "en"
+            ? "We are finalizing logistics and campus security pass coordination with IEEE Computer Society Uniandes. Registration will open very soon. In the meantime, you can explore the 5 research tracks or join our community group to be notified the moment applications go live."
+            : idioma === "pt"
+            ? "Estamos finalizando os preparativos de logística e acesso ao campus junto à IEEE Computer Society Uniandes. O formulário de inscrição será aberto em breve. Enquanto isso, você pode conferir as 5 frentes temáticas ou entrar no grupo da comunidade para ser avisado assim que abrir."
+            : "Estamos ultimando los detalles logísticos y de registro peatonal al campus junto con IEEE Computer Society Uniandes. Próximamente habilitaremos el formulario oficial de inscripción. Mientras tanto, puedes explorar los 5 frentes temáticos o unirte a nuestro grupo de la comunidad para enterarte apenas abran."}
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href={rutaEn(idioma, "/defacchackathon")}
+            className="text-body-sm inline-flex items-center rounded-full bg-aisc-forest px-6 py-2.5 font-medium text-aisc-cream transition-colors hover:bg-aisc-forest-deep"
+          >
+            {idioma === "en"
+              ? "Explore Research Tracks"
+              : idioma === "pt"
+              ? "Ver frentes de pesquisa"
+              : "Ver frentes temáticos"}
+          </Link>
+          <a
+            href="https://chat.whatsapp.com/KhjJqDNVviK3aX5S4q79EF"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-body-sm inline-flex items-center rounded-full border border-aisc-forest/40 bg-aisc-sand/40 px-6 py-2.5 font-medium text-aisc-forest transition-colors hover:bg-aisc-forest hover:text-aisc-cream"
+          >
+            {idioma === "en"
+              ? "Join WhatsApp Community"
+              : idioma === "pt"
+              ? "Entrar no grupo do WhatsApp"
+              : "Unirme al grupo en WhatsApp"}
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   if (cerrado) {
     return (
