@@ -50,7 +50,8 @@ export default function DefAccHero({ idioma, datos, onTracks }: {
         <div className={styles.partnerLogos}>
           <Link href={rutaEn(idioma, "/")}><img src="/aisc/logo-lockup-oscuro.png" width={240} height={70} alt="AI Safety Colombia" /></Link>
           <span aria-hidden="true">×</span>
-          <a href="https://www.instagram.com/csuniandes/" target="_blank" rel="noopener noreferrer"><img src="/aisc/aliados/ieee-cs-uniandes-original.svg" width={560} height={167} alt="IEEE Computer Society Uniandes" /></a>
+          <a className={styles.ieeeLogo} href="https://www.instagram.com/csuniandes/" target="_blank" rel="noopener noreferrer"><img src="/aisc/aliados/ieee-cs-uniandes-original.svg" width={560} height={167} alt="IEEE Computer Society Uniandes" /></a>
+          <a className={styles.universityLogo} href="https://sistemas.uniandes.edu.co/" target="_blank" rel="noopener noreferrer"><img src="/aisc/aliados/uniandes-disc.png" width={2170} height={725} alt="Universidad de los Andes — Departamento de Ingeniería de Sistemas y Computación" loading="lazy" /></a>
         </div>
       </section>
     </>

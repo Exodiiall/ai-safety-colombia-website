@@ -17,7 +17,7 @@ export default function DefAccClosing({ idioma }: { idioma: Idioma }) {
         <video ref={video} controls muted playsInline preload="none" poster="/aisc/hackathon/defacc-banner.jpeg"
           onPlay={() => setReproduciendo(true)} onPause={() => setReproduciendo(false)} onEnded={() => setReproduciendo(false)}
           aria-label={idioma === "en" ? "CyberBear animation" : idioma === "pt" ? "Animação do CyberBear" : "Animación de CyberBear"}>
-          <source src="/aisc/hackathon/defacc-cierre.mp4" type="video/mp4" />
+          <source src="/aisc/hackathon/defacc-logos-juntos.mp4" type="video/mp4" />
         </video>
         {!reproduciendo && <button type="button" className={styles.playToggle} aria-label={etiqueta}
           onClick={() => {

@@ -157,8 +157,15 @@
 @media (max-width: 760px) { .mascotImage img { max-width: 280px; } }
 .closingBear { display: flex; justify-content: center; padding: 20px 24px 56px; }
 .closingBear video { display: block; width: min(100%, 460px); aspect-ratio: 848 / 480; object-fit: contain; background: #f9f7f5; border: 1px solid #e3c49b; border-radius: 18px; box-shadow: 7px 7px 0 #f4931e; }
-.partnerLogos a:last-child img { width: 230px; height: 110px; }
-@media (max-width: 760px) { .partnerLogos a:last-child img { width: 100%; height: 85px; } }
+.partnerLogos { flex-wrap: wrap; justify-content: center; min-width: 0; }
+.partnerLogos .ieeeLogo img { width: 230px; height: 110px; }
+.partnerLogos .universityLogo { flex: 0 1 380px; min-width: 0; }
+.partnerLogos .universityLogo img { display: block; width: 100%; max-width: 380px; height: auto; }
+@media (max-width: 760px) {
+  .partnerLogos .ieeeLogo img { width: 100%; height: 85px; }
+  .partnerLogos .universityLogo { flex: 0 1 100%; }
+  .partnerLogos .universityLogo img { max-width: 380px; margin: auto; height: auto; }
+}
 /* Prize amounts retain their contrast and colors while the pointer moves. */
 .content .prizePanel, .content .prizePanel:hover, .content .prizePanel:focus-within {
   background: #f9f7f5; border-color: #e3c49b; box-shadow: none; transition: none;
