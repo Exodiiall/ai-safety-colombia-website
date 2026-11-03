@@ -57,7 +57,8 @@ function Countdown({ idioma }: { idioma: Idioma }) {
 
   if (!texto) return null;
   return (
-    <span className="text-meta font-medium tracking-wide text-aisc-sand/90 bg-white/10 px-3 py-1 rounded-full border border-white/15">
+    <span className="inline-flex items-center justify-center gap-2 text-meta font-medium text-aisc-sand/75">
+      <span aria-hidden="true" className="size-1.5 rounded-full bg-aisc-coral animate-pulse" />
       {texto}
     </span>
   );
@@ -68,56 +69,55 @@ export default function HackathonBanner() {
   const idioma = idiomaDe(ruta);
   const t = HACKATHON_INFO[idioma];
 
-  return (
-    <div className="relative overflow-hidden rounded-[22px] bg-aisc-forest px-5 py-7 sm:px-6 sm:py-8 text-aisc-sand shadow-sm md:px-10 md:py-9 border border-aisc-forest-deep/20">
-      {/* Círculo salvia decorativo */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-[120px] -right-[80px] size-[280px] rounded-full bg-aisc-sage opacity-30"
-      />
-      <div className="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
-        <div className="flex max-w-[740px] flex-col items-start gap-3">
-          <div className="flex flex-wrap items-center gap-2">
-            {/* Fecha y lugar en dos píldoras: en pantallas angostas bajan enteras, sin partir el texto. */}
-            {t.badge.split(" · ").map((parte, i) => (
-              <span
-                key={parte}
-                className={`text-kicker inline-flex items-center whitespace-nowrap rounded-full px-3 py-1 text-[0.6875rem] tracking-[0.08em] font-medium sm:text-xs sm:tracking-[0.12em] ${i === 0 ? "bg-aisc-coral text-aisc-cream shadow-xs" : "border border-aisc-sand/30 text-aisc-sand"}`}
-              >
-                {parte}
-              </span>
-            ))}
-            <span className="text-[10px] font-mono tracking-wide text-aisc-sand/75 uppercase sm:text-[11px] sm:tracking-wider">
-              AI Safety Colombia × IEEE Uniandes
-            </span>
-          </div>
-          <h2 className="text-display-3 md:text-display-3-lg text-balance text-aisc-sand">
-            {t.title}
-          </h2>
-          <p className="text-body-sm text-aisc-sand/90 max-w-[650px] leading-relaxed">
-            {t.body}
-          </p>
-        </div>
+  const [fecha, lugar] = t.badge.split(" · ");
+  const destino = rutaEn(idioma, "/defacchackathon");
 
-        <div className="flex w-full shrink-0 flex-wrap items-center gap-4 sm:w-auto">
-          <div className="hidden sm:block shrink-0">
-            <Image
-              src="/aisc/hackathon/cyberbear.png"
-              alt="CyberBear"
-              width={76}
-              height={76}
-              className="object-contain drop-shadow-md"
-            />
-          </div>
-          <div className="flex w-full flex-col items-start gap-3 sm:w-auto sm:flex-row sm:items-center">
-            <Link
-              className="text-body-sm inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-full sm:w-auto bg-aisc-coral px-6 font-medium text-aisc-cream transition-all hover:bg-aisc-coral/90 hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-aisc-sand shadow-sm"
-              href={rutaEn(idioma, "/defacchackathon")}
-            >
-              {t.cta}
-            </Link>
-            <Countdown idioma={idioma} />
-          </div>
+  return (
+    <div className="overflow-hidden rounded-[22px] border border-aisc-forest-deep/20 bg-aisc-forest text-aisc-sand shadow-sm lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center">
+      {/* Afiche oficial: arriba en el celular, a la derecha en escritorio. Ya lleva fecha, lugar y logos. */}
+      <Link
+        href={destino}
+        tabIndex={-1}
+        aria-hidden="true"
+        className="block bg-[#faf8f5] lg:order-2 lg:m-8 lg:ml-0 lg:overflow-hidden lg:rounded-2xl"
+      >
+        <Image
+          src="/aisc/hackathon/banner-ieee.png"
+          alt=""
+          width={1024}
+          height={512}
+          sizes="(min-width: 1024px) 420px, 100vw"
+          className="h-auto w-full"
+        />
+      </Link>
+
+      <div className="flex flex-col gap-4 px-5 pt-6 pb-7 sm:px-8 sm:pt-8 md:px-10 md:pb-9 lg:order-1">
+        <ul className="flex flex-wrap gap-x-5 gap-y-1.5 text-body-sm font-medium text-aisc-sand/85">
+          <li className="inline-flex items-center gap-2">
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="size-4 text-aisc-coral" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5" /><path d="M3 9.5h18M8 2.5v4M16 2.5v4" /></svg>
+            {fecha}
+          </li>
+          <li className="inline-flex items-center gap-2">
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="size-4 text-aisc-coral" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></svg>
+            {lugar}
+          </li>
+        </ul>
+
+        <h2 className="text-display-3 md:text-display-3-lg text-balance text-aisc-sand">
+          {t.title}
+        </h2>
+        <p className="text-body-sm max-w-[620px] leading-relaxed text-aisc-sand/85">
+          {t.body}
+        </p>
+
+        <div className="mt-2 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-5">
+          <Link
+            className="text-body-sm inline-flex min-h-12 items-center justify-center rounded-full bg-aisc-coral px-7 font-medium text-aisc-cream shadow-sm transition-all hover:scale-[1.02] hover:bg-aisc-coral/90 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-aisc-sand"
+            href={destino}
+          >
+            {t.cta}
+          </Link>
+          <Countdown idioma={idioma} />
         </div>
       </div>
     </div>
