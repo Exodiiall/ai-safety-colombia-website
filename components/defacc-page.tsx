@@ -186,67 +186,45 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
     <main className={PAGE_SHELL}>
       {/* ------------------------------------------------------------ HERO */}
       <section className="relative overflow-hidden bg-aisc-forest-deep text-aisc-sand">
-        {/* Fondo decorativo con luces y patrón binario de 1s y 0s del flyer */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-40 -right-40 size-[500px] rounded-full bg-aisc-sage/20 blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-32 -left-20 size-[420px] rounded-full bg-aisc-mint/15 blur-3xl"
-        />
         <FondoBinario />
         <SiteHeader active="/defacchackathon" />
 
-        <div className="relative z-10 mx-auto w-full max-w-[1448px] px-8 pt-28 pb-14 md:px-16 md:pt-32 md:pb-16">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
-            {/* Texto del Hero */}
-            <div className="flex flex-col items-start gap-5 lg:col-span-7 xl:col-span-8">
-              <h1
-                className={`${leagueSpartan.className} flex flex-col uppercase leading-[0.94] tracking-[-0.02em]`}
-              >
-                <span className="text-[1.75rem] sm:text-[2.25rem] md:text-[2.65rem] font-extrabold text-aisc-coral">
-                  Defensive Acceleration
-                </span>
-                <span className="mt-1 text-[3rem] sm:text-[4.1rem] md:text-[4.85rem] font-black text-aisc-sand tracking-[-0.03em]">
-                  Hackathon
-                </span>
-              </h1>
-
-              <p className="text-body md:text-body-lg max-w-[680px] text-aisc-sand/90">
-                {d.lema}
-              </p>
-
-              <p className="text-body-sm mt-1 w-fit text-aisc-sand/75">
-                {d.estadoInscripciones}
-              </p>
-
-              {/* Botones de acción principales */}
-              <div className="mt-2 flex flex-wrap items-center gap-3">
-                <Link className={CTA_LINK_PRIMARY} href={rutaAplicar}>
-                  {d.ctaAplicar}
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => setPestaña("tracks")}
-                  className={CTA_LINK}
-                >
-                  {d.ctaVerBases}
-                </button>
-              </div>
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 pt-28 pb-12 sm:px-8 md:pt-36 md:pb-16">
+          <div className="flex flex-col items-center text-center">
+            {/* Banner oficial propuesto por IEEE Computer Society Uniandes */}
+            <div className="w-full max-w-[980px] overflow-hidden rounded-2xl border border-white/20 bg-[#faf8f5] shadow-2xl transition-all">
+              <img
+                src="/aisc/hackathon/banner-ieee.png"
+                alt="Defensive Acceleration Hackathon · Sábado 14 Noviembre 2026 · Uniandes · IEEE Computer Society × AI Safety Colombia"
+                width={1024}
+                height={512}
+                decoding="async"
+                className="h-auto w-full object-contain"
+              />
             </div>
 
-            {/* Mascota CyberBear sobria */}
-            <div className="relative flex justify-center lg:col-span-5 xl:col-span-4">
-              <div className="relative w-full max-w-[260px] md:max-w-[300px]">
-                <img
-                  src="/aisc/hackathon/cyberbear-clean.png"
-                  alt="CyberBear"
-                  width={474}
-                  height={730}
-                  className="mx-auto h-auto w-full object-contain drop-shadow-lg"
-                />
-              </div>
+            {/* Subtítulo y estado de postulación */}
+            <p className="mt-8 max-w-[720px] text-body md:text-body-lg text-aisc-sand/90">
+              {d.lema}
+            </p>
+
+            <div className="mt-3.5 inline-flex items-center gap-2 rounded-full border border-aisc-sand/25 bg-white/5 px-4 py-1.5 text-body-sm text-aisc-sand/85 backdrop-blur-xs">
+              <span className="size-2 rounded-full bg-aisc-coral animate-pulse" />
+              <span>{d.estadoInscripciones}</span>
+            </div>
+
+            {/* Botones de acción principales */}
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <Link className={CTA_LINK_PRIMARY} href={rutaAplicar}>
+                {d.ctaAplicar}
+              </Link>
+              <button
+                type="button"
+                onClick={() => setPestaña("tracks")}
+                className={CTA_LINK}
+              >
+                {d.ctaVerBases}
+              </button>
             </div>
           </div>
         </div>
@@ -392,6 +370,58 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
                   <p className="text-body md:text-body-lg mt-3 text-aisc-ink/85">
                     {d.resumen.retoTexto}
                   </p>
+
+                  {/* Diagrama técnico del ciclo del reto defensivo */}
+                  <div className="mt-8 rounded-2xl border border-aisc-forest/20 bg-aisc-sand/45 p-5 md:p-7">
+                    <span className="text-kicker text-aisc-forest font-bold block mb-4">
+                      {idioma === "en"
+                        ? "Technical Sprint Cycle"
+                        : idioma === "pt"
+                        ? "Ciclo Técnico do Sprint"
+                        : "Ciclo técnico del sprint"}
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                      {[
+                        {
+                          paso: "01",
+                          titulo: idioma === "en" ? "Threat Vector" : idioma === "pt" ? "Vetor de Ameaça" : "Vector de amenaza",
+                          desc: idioma === "en" ? "Identify an active, concrete AI vulnerability or risk" : idioma === "pt" ? "Identificar um risco ou vulnerabilidade real em IA" : "Definir un riesgo o vulnerabilidad real en modelos o agentes",
+                        },
+                        {
+                          paso: "02",
+                          titulo: idioma === "en" ? "Defensive Prototype" : idioma === "pt" ? "Protótipo Defensivo" : "Prototipo defensivo",
+                          desc: idioma === "en" ? "Build verifiable, working code to mitigate or contain it" : idioma === "pt" ? "Construir código funcional que mitigue ou contenha a ameaça" : "Construir código ejecutable que mitigue o contenga el vector",
+                        },
+                        {
+                          paso: "03",
+                          titulo: idioma === "en" ? "Empirical Benchmark" : idioma === "pt" ? "Avaliação Empírica" : "Evaluación empírica",
+                          desc: idioma === "en" ? "Measure effectiveness with datasets, tests, or metrics" : idioma === "pt" ? "Medir eficácia com benchmarks ou testes reproduzíveis" : "Medir efectividad con suite de pruebas o datos reproducibles",
+                        },
+                        {
+                          paso: "04",
+                          titulo: idioma === "en" ? "Safety Verification" : idioma === "pt" ? "Verificação de Segurança" : "Verificación y seguridad",
+                          desc: idioma === "en" ? "Assess safety boundaries and responsible deployment" : idioma === "pt" ? "Verificar limites de segurança e uso responsável" : "Verificar que la defensa no cree riesgos o sesgos secundarios",
+                        },
+                      ].map((item, i) => (
+                        <div key={item.paso} className="relative flex flex-col justify-between rounded-xl border border-aisc-line bg-white p-4 shadow-2xs">
+                          <div>
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="font-mono text-xs font-bold text-aisc-coral">{item.paso}</span>
+                              {i < 3 && (
+                                <span className="hidden lg:block text-aisc-muted/50 text-xs" aria-hidden="true">→</span>
+                              )}
+                            </div>
+                            <h4 className="text-display-4 font-semibold text-aisc-ink mt-2">
+                              {item.titulo}
+                            </h4>
+                            <p className="text-body-sm text-aisc-muted mt-1 leading-snug">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
                   <h4 className="text-display-4 mt-8 text-aisc-forest">
                     {d.resumen.cuatroRequisitosTitulo}
