@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import styles from "./defacc.module.css";
 import { useEffect, useState } from "react";
 import type { Idioma } from "@/lib/idiomas";
 import { rutaEn } from "@/lib/idiomas";
@@ -322,7 +323,7 @@ export default function DefAccApplyForm({
   }
 
   return (
-    <form onSubmit={enviar} className="flex flex-col gap-8 rounded-2xl border border-aisc-line bg-white p-6 shadow-xs md:p-10">
+    <form onSubmit={enviar} className={`${styles.form} flex flex-col gap-8 rounded-2xl border border-aisc-line bg-white p-6 shadow-xs md:p-10`}>
       {/* Honeypot anti-spam */}
       <input
         type="text"

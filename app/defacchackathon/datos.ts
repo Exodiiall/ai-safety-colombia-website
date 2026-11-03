@@ -157,10 +157,10 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
     badge: "AI Safety Colombia × IEEE Computer Society Uniandes",
     titulo: "Defensive Acceleration Hackathon",
     subtitulo: "Hackatón de IA para la defensa · Bogotá 2026",
-    lema: "Un día, un reto: construir una defensa basada en inteligencia artificial contra una amenaza real.",
+    lema: "Un día para construir y probar una defensa con inteligencia artificial.",
     ctaAplicar: "Inscripciones próximamente",
     ctaVerBases: "Ver frentes temáticos",
-    estadoInscripciones: "Las postulaciones aún no han iniciado. Próximamente abriremos la convocatoria oficial.",
+    estadoInscripciones: "Pronto anunciaremos la apertura de la convocatoria.",
     premiosPodio: [
       {
         puesto: "Primer puesto",
@@ -181,7 +181,7 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
     premioDifusion: {
       puesto: "Premio especial por difusión",
       monto: "Por definir",
-      detalle: "Reconocimiento a la mejor cobertura o hilo técnico de divulgación en redes sociales",
+      detalle: "Reconocimiento al mejor hilo técnico o cobertura en redes",
     },
     sidebar: {
       titulo: "Detalles del evento",
@@ -208,30 +208,30 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
       cronograma: "Agenda y FAQ",
     },
     resumen: {
-      ideaTitulo: "La idea: aceleración defensiva (def/acc)",
+      ideaTitulo: "IA para defender",
       ideaParrafos: [
-        "Los sistemas de inteligencia artificial avanzan rápido en capacidad y autonomía: agentes conectados a herramientas reales (terminales, archivos, navegadores o servidores MCP) pueden ser secuestrados mediante inyección indirecta de instrucciones; modelos cada vez más capaces plantean el problema de cómo supervisarlos si ocultan intenciones o intentan sabotear código; y la automatización de ciberataques y suplantación sintética pone a prueba la infraestructura digital y la confianza pública.",
-        "La aceleración defensiva (def/acc) en seguridad de la IA propone construir y validar las defensas técnicas e institucionales que inclinen la balanza a favor de quien defiende: arquitecturas de agentes resistentes, protocolos de control y monitoreo de IA (AI Control), ciberdefensa automatizada y verificación formal de software, autenticidad criptográfica y estándares para asegurar pesos de modelos e infraestructura crítica.",
+        "La IA puede facilitar ciberataques, suplantaciones y la manipulación de agentes autónomos.",
+        "La aceleración defensiva (def/acc) busca lo contrario: construir y validar herramientas y estándares que protejan sistemas, personas e información.",
       ],
-      colombiaTitulo: "Relevancia directa en nuestro entorno",
+      colombiaTitulo: "¿Por qué en Colombia?",
       colombiaTexto:
-        "En Colombia y América Latina ya enfrentamos riesgos concretos (desde incidentes contra entidades públicas e infraestructura crítica y suplantación con voces clonadas por WhatsApp hasta el despliegue apresurado de agentes autónomos sin guardarraíles), y a la vez contamos con el talento para aportar soluciones empíricas a la frontera global de seguridad de la IA.",
+        "Los ataques a entidades públicas, las voces clonadas y los agentes sin protección ya son riesgos en nuestra región. Aquí también hay talento para enfrentarlos.",
       retoTitulo: "El reto",
       retoTexto:
-        "Construir y evaluar, en 8 horas de trabajo continuo, un prototipo defensivo o estándar verificable dentro de uno de los 5 frentes temáticos: seguridad de agentes, control y monitoreo de IA, ciberdefensa y verificación formal, defensa epistémica o seguridad de infraestructura y gobernanza.",
-      cuatroRequisitosTitulo: "Las 4 preguntas clave de cada entrega",
+        "Construye y evalúa en 8 horas un prototipo defensivo o estándar verificable en uno de los 5 frentes temáticos.",
+      cuatroRequisitosTitulo: "Tu proyecto debe responder",
       cuatroRequisitos: [
-        "El vector de riesgo: definir con precisión qué ataque, fallo de control o vulnerabilidad de IA busca mitigar el proyecto.",
-        "El mecanismo o protocolo defensivo: construir el prototipo, monitor de supervisión, verificador formal o estándar técnico-regulatorio que contiene la amenaza.",
-        "Validación empírica: medir la efectividad con benchmarks, casos de prueba o escenarios concretos (ataques neutralizados, tasa de detección, falsos positivos o invariantes verificados).",
-        "Límites y riesgo dual: documentar con honestidad dónde falla la defensa y verificar que el trabajo no facilite usos ofensivos.",
+        "Amenaza: ¿qué ataque, vulnerabilidad o fallo de IA buscas mitigar?",
+        "Defensa: ¿qué prototipo o protocolo construiste para contenerlo?",
+        "Evidencia: ¿qué pruebas y métricas demuestran que funciona?",
+        "Límites: ¿dónde falla y cómo evitas que facilite usos ofensivos?",
       ],
       quienTitulo: "¿Quién puede participar?",
       quienPuntos: [
-        "Estudiantes universitarios de cualquier semestre y carrera, investigadores y profesionales de la industria o el sector público.",
-        "Equipos de 2 a 4 personas. Quien aplique solo podrá conformar equipo durante la sesión de apertura a las 8:30 a. m.",
-        "No hace falta experiencia previa en seguridad de IA: cada frente ofrece puntos de partida accesibles (resolubles con Python, suites de evaluación guiadas o modelado formal de amenazas y gobernanza sin programar en el Track 5).",
-        "Cupo limitado por aforo para garantizar un espacio de trabajo óptimo, conectividad y alimentación.",
+        "Estudiantes de cualquier carrera y semestre, investigadores y profesionales del sector público o privado.",
+        "Equipos de 2 a 4. Si aplicas solo, podrás formar equipo en la apertura de las 8:30 a. m.",
+        "No necesitas experiencia en seguridad de IA. Hay opciones con Python básico y un frente sin programación.",
+        "Cupo limitado por aforo.",
       ],
       premiosTitulo: "Premios · COP 2.000.000 en total",
       premiosParrafos: [
@@ -241,27 +241,27 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
       ],
       mascotaTitulo: "Nuestra mascota: el oso de anteojos",
       mascotaTexto:
-        "El oso de anteojos (Tremarctos ornatus) es el único oso nativo de Suramérica y habita en los páramos y bosques andinos colombianos. Sus 'anteojos' representan la esencia de este hackatón: ver las amenazas antes de que causen daño y proteger nuestro ecosistema digital.",
+        "El oso de anteojos es el único oso nativo de Suramérica y habita los Andes colombianos. Sus “anteojos” simbolizan nuestra misión: ver las amenazas a tiempo y proteger el ecosistema digital.",
     },
     kits: {
       introTitulo: "Frentes de investigación",
       introTexto:
-        "Cada equipo aborda un vector de amenaza concreto y construye una solución defensiva comprobable. Puedes elegir cualquiera de estos frentes o proponer un reto afín:",
+        "Elige un frente o propone un reto afín. El objetivo es construir una defensa y demostrar que funciona.",
       listaKits: [],
       tracksTitulo: "Los 5 frentes temáticos",
       tracksTexto:
-        "Los frentes están diseñados alrededor de las prioridades de aceleración defensiva (def/acc) en seguridad de IA: proteger agentes autónomos, supervisar sistemas no confiables, automatizar la ciberdefensa con código verificable, blindar el ecosistema epistémico y asegurar la infraestructura y gobernanza de IA.",
+        "Elige dónde aportar: agentes, control de IA, ciberdefensa, autenticidad de la información o gobernanza.",
       listaTracks: [
         {
           id: "track-1",
           numero: "01",
-          titulo: "Seguridad de agentes y defensa contra inyección de instrucciones",
+          titulo: "Agentes seguros e inyección de instrucciones",
           resumen:
-            "Cuando los sistemas de IA pasan de conversar a ejecutar acciones con herramientas reales (archivos, navegadores, terminales o servidores MCP), una instrucción oculta en un documento o web puede secuestrar al agente (prompt injection indirecto) para exfiltrar información o ejecutar comandos no autorizados.",
+            "Evita que instrucciones ocultas en documentos o webs secuestren agentes, filtren datos o ejecuten acciones no autorizadas.",
           paraEmpezar:
-            "Construir un auditor o filtro que inspeccione manifiestos y llamadas a herramientas MCP para detectar instrucciones maliciosas ocultas o permisos excesivos, evaluado sobre el benchmark MCPTox.",
+            "Crea un filtro de instrucciones maliciosas y permisos excesivos en herramientas MCP. Evalúalo con MCPTox.",
           conExperiencia:
-            "Diseñar una arquitectura defensiva (separación de privilegios, aislamiento de contexto o guardarraíles de flujo de datos) para agentes y medir cuántos ataques neutraliza sin degradar tareas legítimas en AgentDojo o AgentDyn.",
+            "Aísla contextos o privilegios del agente. Mide ataques bloqueados y tareas legítimas resueltas con AgentDojo o AgentDyn.",
           recursos: [
             { label: "AgentDojo (ETH Zürich)", url: "https://github.com/ethz-spylab/agentdojo" },
             { label: "MCPTox Benchmark", url: "https://github.com/zhiqiangwang4/MCPTox-Benchmark" },
@@ -271,13 +271,13 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
         {
           id: "track-2",
           numero: "02",
-          titulo: "Control de IA, monitoreo y detección de sabotaje",
+          titulo: "Control de IA y detección de sabotaje",
           resumen:
-            "Un problema central de seguridad técnica de IA (impulsado por Redwood Research y UK AISI): si un modelo o agente autónomo actúa de forma engañosa, oculta intenciones en su razonamiento o intenta insertar puertas traseras sutiles en código, ¿cómo diseñamos protocolos de control que lo atrapen a tiempo?",
+            "Diseña controles para detectar agentes que engañan, ocultan capacidades o sabotean código.",
           paraEmpezar:
-            "Escribir con el framework Inspect (UK AISI) una suite de evaluación que detecte cuándo un modelo intenta evadir límites de seguridad, ocultar capacidades o engañar al evaluador.",
+            "Usa Inspect para evaluar si un modelo evade límites de seguridad, oculta capacidades o engaña al evaluador.",
           conExperiencia:
-            "Implementar un monitor de supervisión en ControlArena (entornos Bash o Apps) o con OpenAI Monitorability Evals que audite las acciones y cadenas de razonamiento de un agente para detectar sabotaje con baja tasa de falsos positivos.",
+            "Crea un monitor con ControlArena u OpenAI Monitorability Evals. Audita acciones y razonamiento para detectar sabotaje con pocos falsos positivos.",
           recursos: [
             { label: "ControlArena (UK AISI & Redwood)", url: "https://github.com/UKGovernmentBEIS/control-arena" },
             { label: "Inspect Framework (UK AISI)", url: "https://inspect.aisi.org.uk/" },
@@ -287,13 +287,13 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
         {
           id: "track-3",
           numero: "03",
-          titulo: "Ciberdefensa automatizada y verificación formal de software",
+          titulo: "Ciberdefensa y verificación formal",
           resumen:
-            "Los modelos de frontera abaratan encontrar y explotar vulnerabilidades de software a gran escala. Para inclinar la balanza a favor de quien defiende, necesitamos usar IA para detectar fallas automáticamente, generar parches seguros y verificar matemáticamente que el código crítico sea invulnerable.",
+            "Usa IA para encontrar vulnerabilidades, generar parches y verificar la seguridad de código crítico.",
           paraEmpezar:
-            "Construir un flujo automatizado que analice código inseguro, identifique la vulnerabilidad y genere un parche verificable evaluado contra casos de prueba de CyberSecEval (Purple Llama) o CTIBench.",
+            "Automatiza el análisis y parcheo de código inseguro. Evalúa los resultados con CyberSecEval o CTIBench.",
           conExperiencia:
-            "Usar modelos de lenguaje para sintetizar anotaciones e invariantes formales que demuestren matemáticamente que un programa está libre de errores críticos utilizando Dafny y el benchmark DafnyBench.",
+            "Genera anotaciones e invariantes con IA y verifica propiedades de seguridad con Dafny y DafnyBench.",
           recursos: [
             { label: "DafnyBench (Verificación formal)", url: "https://github.com/sun-wendy/DafnyBench" },
             { label: "CyberSecEval (Purple Llama)", url: "https://github.com/meta-llama/PurpleLlama" },
@@ -303,13 +303,13 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
         {
           id: "track-4",
           numero: "04",
-          titulo: "Defensa epistémica, autenticidad criptográfica y detección de suplantación",
+          titulo: "Autenticidad y defensa contra suplantación",
           resumen:
-            "La IA reduce casi a cero el costo de clonar voces en tiempo real, fabricar evidencia sintética y desplegar campañas de manipulación persuasiva. La aceleración defensiva en el espacio informativo busca proteger la confianza pública mediante pruebas criptográficas de origen y detección resistente en canales reales.",
+            "Protege la confianza en la información frente a voces clonadas, contenido sintético y manipulación.",
           paraEmpezar:
-            "Implementar un verificador de procedencia criptográfica bajo el estándar C2PA (c2pa-python) que certifique el origen de archivos multimedia, o un detector calibrado con SpaPhish.",
+            "Verifica el origen de archivos con C2PA o crea un detector de phishing con SpaPhish.",
           conExperiencia:
-            "Evaluar cómo se degrada la precisión de detectores de voz sintética de última generación (como AASIST) bajo la compresión real de audio de WhatsApp usando el dataset In-the-Wild, y construir un mecanismo de mitigación.",
+            "Evalúa AASIST con audios de In-the-Wild comprimidos como en WhatsApp. Propón una mitigación ante la pérdida de precisión.",
           recursos: [
             { label: "Librería c2pa-python", url: "https://github.com/contentauth/c2pa-python" },
             { label: "Modelo AASIST", url: "https://github.com/clovaai/aasist" },
@@ -320,13 +320,13 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
         {
           id: "track-5",
           numero: "05",
-          titulo: "Seguridad de infraestructura de IA y gobernanza defensiva (No-Code)",
+          titulo: "Infraestructura y gobernanza de IA · Sin código",
           resumen:
-            "Evitar el robo o exfiltración de los pesos de modelos de frontera y garantizar que el despliegue de sistemas autónomos no comprometa servicios esenciales requiere estándares técnicos e institucionales rigurosos. Este frente no exige programar código.",
+            "Diseña estándares para proteger los pesos de modelos y desplegar agentes sin comprometer servicios esenciales. No exige programar.",
           paraEmpezar:
-            "Realizar un modelado formal de amenazas y brechas de seguridad bajo los niveles SL1 a SL5 de RAND (Securing AI Model Weights) o diseñar un protocolo de respuesta a incidentes de IA.",
+            "Modela amenazas con los niveles SL1 a SL5 de RAND o diseña un protocolo de respuesta a incidentes de IA.",
           conExperiencia:
-            "Formular un estándar técnico y regulatorio verificable con los requisitos mínimos de contención, auditoría y líneas rojas que entidades públicas o infraestructura crítica deben exigir antes de desplegar agentes autónomos.",
+            "Propón un estándar verificable de contención, auditoría y líneas rojas para agentes en entidades públicas o infraestructura crítica.",
           recursos: [
             { label: "Securing Model Weights (RAND)", url: "https://www.rand.org/pubs/research_reports/RRA2849-1.html" },
             { label: "Estándar de Seguridad SL5", url: "https://sl5.org/sl5-standard" },
@@ -335,56 +335,56 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
       ],
     },
     reglas: {
-      tituloSeguridad: "Reglas de seguridad y uso responsable (Estrictas)",
+      tituloSeguridad: "Seguridad y uso responsable",
       reglasSeguridad: [
-        "Prohibido atacar, escanear o probar sistemas reales de terceros sin autorización explícita por escrito. Hacerlo es delito bajo la Ley 1273 de 2009. Todo el trabajo se realiza en entornos de laboratorio, benchmarks públicos o datos sintéticos.",
-        "Cero publicación de exploits funcionales, código de malware o herramientas concebidas primordialmente para ofensa. Si un equipo descubre una vulnerabilidad real en una librería existente, debe reportarla en privado y omitirla de su entrega pública.",
-        "Protección de datos personales: las muestras de voz, rostros o correos deben provenir de datasets públicos debidamente anonimizados o ser datos sintéticos.",
-        "Atribución y transparencia: todo código, dataset, librería o fragmento generado con IA debe estar claramente documentado y citado en la entrega.",
+        "No ataques, escanees ni pruebes sistemas de terceros sin autorización escrita. Trabaja solo en laboratorios, benchmarks públicos o datos sintéticos.",
+        "No publiques exploits funcionales, malware ni herramientas ofensivas. Reporta vulnerabilidades reales en privado y exclúyelas de la entrega pública.",
+        "Usa voces, rostros y correos sintéticos o de datasets públicos anonimizados.",
+        "Documenta y cita el código, los datos, las librerías y los fragmentos generados con IA.",
       ],
       entregablesTitulo: "Entregables de cada equipo",
       entregablesHora: "Hora límite estricta: sábado 14 de noviembre a las 5:00 p. m.",
       entregables: [
-        "Enlace al repositorio ejecutable (GitHub o Google Colab) con código documentado para los Tracks 1 al 4, o al documento de modelado formal de amenazas / estándar técnico-regulatorio verificable para el Track 5 (No-Code).",
-        "Ficha técnica de una página (según la plantilla oficial): vector de amenaza, arquitectura o protocolo defensivo, metodología de evaluación, resultados cuantitativos, límites y análisis de riesgo dual.",
-        "Video de demostración (Opcional): video de hasta 2 minutos mostrando el prototipo o protocolo en funcionamiento.",
+        "Tracks 1–4: repositorio ejecutable y documentado en GitHub o Colab. Track 5: documento de amenazas o estándar técnico-regulatorio verificable.",
+        "Ficha de una página con la plantilla oficial: amenaza, defensa, metodología, resultados cuantitativos, límites y riesgo dual.",
+        "Opcional: video de hasta 2 minutos con la demostración del prototipo o protocolo.",
       ],
-      criteriosTitulo: "Criterios de evaluación y rúbrica",
+      criteriosTitulo: "¿Cómo se evalúa?",
       criteriosTexto:
-        "Cada proyecto es evaluado de forma cruzada por al menos 2 jurados especialistas en seguridad de IA, ciberseguridad y gobernanza tecnológica:",
+        "Cada proyecto será evaluado por al menos 2 jurados especialistas:",
       criterios: [
         {
           nombre: "Funcionamiento del prototipo / Rigor técnico",
           peso: "30%",
-          descripcion: "¿El prototipo corre correctamente y demuestra una implementación funcional de la defensa (o, en el Track 5, un estándar o modelado de amenazas técnico y accionable)?",
+          descripcion: "Defensa funcional o, en el Track 5, un estándar o modelo de amenazas riguroso y aplicable.",
         },
         {
           nombre: "Evidencia empírica y evaluación",
           peso: "25%",
-          descripcion: "¿Lo evaluaron contra benchmarks, datasets o escenarios de prueba concretos? ¿Los resultados respaldan la efectividad afirmada?",
+          descripcion: "Pruebas y resultados que respalden la efectividad de la defensa.",
         },
         {
           nombre: "Relevancia en aceleración defensiva",
           peso: "20%",
-          descripcion: "¿Aborda un vector de riesgo real en seguridad de IA y aporta una ventaja neta a quien defiende sobre quien ataca?",
+          descripcion: "Una solución a un riesgo real de IA que dé ventaja a quien defiende.",
         },
         {
           nombre: "Uso responsable y límites",
           peso: "15%",
-          descripcion: "¿Identifican con honestidad las limitaciones técnicas y mitigan riesgos de uso dual o malicioso?",
+          descripcion: "Limitaciones claras y medidas contra usos maliciosos.",
         },
         {
           nombre: "Claridad y síntesis",
           peso: "10%",
-          descripcion: "¿La ficha y la explicación son claras, concisas y fáciles de evaluar para los jurados?",
+          descripcion: "Ficha y presentación claras y fáciles de evaluar.",
         },
       ],
-      finalistasTitulo: "Dinámica de selección de ganadores",
+      finalistasTitulo: "Finalistas y premiación",
       finalistasTexto:
-        "A las 7:00 p. m., tras la deliberación técnica de los jurados, se anuncian los 5 mejores proyectos de la jornada. Cada equipo finalista realiza un pitch en vivo de 4 minutos ante el salón completo y a las 7:25 p. m. el jurado anuncia los tres primeros puestos.",
+        "A las 7:00 p. m., los 5 mejores equipos presentan un pitch de 4 minutos. A las 7:25 p. m. se anuncian los tres ganadores.",
       juradosTitulo: "Jueces y mentores",
       juradosTexto:
-        "Durante la jornada pasan por la sala investigadores y especialistas en seguridad de IA, ciberseguridad y gobernanza para acompañar a los equipos y evaluar los entregables al cierre del día. La lista confirmada de jurados y mentores se publicará en los próximos días.",
+        "Especialistas en seguridad de IA, ciberseguridad y gobernanza acompañarán y evaluarán a los equipos. Los nombres se anunciarán próximamente.",
       jurados: [],
     },
     cronograma: {
@@ -407,28 +407,28 @@ export const TEXTOS_HACKATHON: Record<Idioma, DatosHackathon> = {
       faqTitulo: "Preguntas frecuentes",
       faqs: [
         {
-          q: "¿Puedo participar si no tengo equipo previo?",
-          a: "Sí, absolutamente. Puedes postularte individualmente. Durante la apertura de las 8:30 a. m. realizaremos una dinámica guiada de conformación de equipos interdisciplinarios para que nadie compita solo.",
+          q: "¿Puedo ir sin equipo?",
+          a: "Sí. Postúlate individualmente y forma equipo en la apertura de las 8:30 a. m.",
         },
         {
-          q: "¿Tiene algún costo participar?",
-          a: "Ninguno. La participación es 100% gratuita e incluye credencial conmemorativa, almuerzo completo en el campus, refrigerios continuos y acceso a mentores especializados en sala. El cupo es limitado por aforo para asegurar una experiencia de primer nivel.",
+          q: "¿Cuánto cuesta?",
+          a: "Es gratuito. Incluye credencial, almuerzo, refrigerios y mentoría. El cupo es limitado.",
         },
         {
-          q: "¿Qué nivel técnico necesito tener?",
-          a: "El hackatón está diseñado para todos los niveles: desde estudiantes de primer semestre de cualquier carrera hasta profesionales. Hay opciones que requieren Python elemental y notebooks guiados, e incluso el Track 5 permite abordar gobernanza y modelado de amenazas sin programar.",
+          q: "¿Necesito experiencia?",
+          a: "Hay opciones para todos los niveles, desde Python básico hasta retos avanzados. El Track 5 no exige programar.",
         },
         {
           q: "¿Qué debo llevar al evento?",
-          a: "Tu computador portátil con cargador, documento de identidad original para el ingreso a la Universidad de los Andes, termo para agua y muchas ganas de construir.",
+          a: "Computador portátil, cargador, documento de identidad original y termo para agua.",
         },
         {
           q: "¿Cómo se evalúa y premia?",
-          a: "Los proyectos se entregan a las 5:00 p. m. (repositorio + ficha técnica de 1 página). Los 5 con mejor puntaje presentan 4 minutos en vivo a las 7:00 p. m. Los tres primeros lugares reciben COP 1.000.000, COP 500.000 y COP 500.000.",
+          a: "Entrega a las 5:00 p. m.: repositorio o documento del Track 5 y ficha de una página. Los 5 finalistas presentan a las 7:00 p. m. Premios: COP 1.000.000, 500.000 y 500.000.",
         },
         {
           q: "¿Cómo llego al salón en Uniandes?",
-          a: "El número exacto del edificio y salón te llegará al correo de aceptación junto con el registro de portería entre el 11 y el 13 de noviembre.",
+          a: "Recibirás el edificio, salón y registro de portería en tu correo de aceptación, entre el 11 y el 13 de noviembre.",
         },
       ],
     },
