@@ -69,7 +69,7 @@ export default function HackathonBanner() {
   const t = HACKATHON_INFO[idioma];
 
   return (
-    <div className="relative overflow-hidden rounded-[22px] bg-aisc-forest px-6 py-8 text-aisc-sand shadow-sm md:px-10 md:py-9 border border-aisc-forest-deep/20">
+    <div className="relative overflow-hidden rounded-[22px] bg-aisc-forest px-5 py-7 sm:px-6 sm:py-8 text-aisc-sand shadow-sm md:px-10 md:py-9 border border-aisc-forest-deep/20">
       {/* Círculo salvia decorativo */}
       <div
         aria-hidden="true"
@@ -78,10 +78,10 @@ export default function HackathonBanner() {
       <div className="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
         <div className="flex max-w-[740px] flex-col items-start gap-3">
           <div className="flex flex-wrap items-center gap-2.5">
-            <span className="text-kicker inline-flex items-center rounded-full bg-aisc-coral px-3 py-1 text-aisc-cream font-medium shadow-xs">
+            <span className="text-kicker inline-flex items-center whitespace-nowrap rounded-full bg-aisc-coral px-3 py-1 text-[0.6875rem] tracking-[0.06em] text-aisc-cream font-medium shadow-xs sm:text-xs sm:tracking-[0.12em]">
               {t.badge}
             </span>
-            <span className="text-[11px] font-mono tracking-wider text-aisc-sand/75 uppercase">
+            <span className="text-[10px] font-mono tracking-wide text-aisc-sand/75 uppercase sm:text-[11px] sm:tracking-wider">
               AI Safety Colombia × IEEE Uniandes
             </span>
           </div>

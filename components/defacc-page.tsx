@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { League_Spartan } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 import {
@@ -127,6 +127,34 @@ function PremiosSoberos({
 export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
   const d = TEXTOS_HACKATHON[idioma];
   const [pestaña, setPestaña] = useState<"resumen" | "tracks" | "reglas" | "cronograma">("resumen");
+  const inicioPestañas = useRef<HTMLDivElement>(null);
+  const [pegada, setPegada] = useState(false);
+
+  /* Con la barra pegada, el texto asomaba entre la pastilla flotante y las
+     pestañas; al pegarse, la barra pinta también esa franja. */
+  useEffect(() => {
+    const el = inicioPestañas.current;
+    if (!el) return;
+    const medir = () => setPegada(el.getBoundingClientRect().top <= (window.innerWidth >= 768 ? 88 : 72) + 1);
+    medir();
+    window.addEventListener("scroll", medir, { passive: true });
+    window.addEventListener("resize", medir, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", medir);
+      window.removeEventListener("resize", medir);
+    };
+  }, []);
+
+  /* Cambia de pestaña y lleva al lector al comienzo del contenido: en el
+     celular el cuerpo queda fuera de pantalla y el cambio no se veía. La
+     barra fija del sitio mide 72px (88px desde md). */
+  const abrirPestaña = (tab: typeof pestaña, siempre = false) => {
+    setPestaña(tab);
+    const el = inicioPestañas.current;
+    if (!el) return;
+    const tope = el.getBoundingClientRect().top + window.scrollY - (window.innerWidth >= 768 ? 88 : 72);
+    if (siempre || window.scrollY > tope) window.scrollTo({ top: tope, behavior: "smooth" });
+  };
   const [diasFaltan, setDiasFaltan] = useState<number | null>(null);
 
   useEffect(() => {
@@ -208,19 +236,19 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
               {d.lema}
             </p>
 
-            <div className="mt-3.5 inline-flex items-center gap-2 rounded-full border border-aisc-sand/25 bg-white/5 px-4 py-1.5 text-body-sm text-aisc-sand/85 backdrop-blur-xs">
-              <span className="size-2 rounded-full bg-aisc-coral animate-pulse" />
+            <div className="mt-4 inline-flex max-w-[560px] items-start gap-2.5 rounded-2xl border border-aisc-sand/25 bg-white/5 px-4 py-2.5 text-left text-body-sm text-aisc-sand/85 backdrop-blur-xs sm:items-center sm:rounded-full sm:py-1.5">
+              <span className="mt-[0.45em] size-2 shrink-0 rounded-full bg-aisc-coral animate-pulse sm:mt-0" />
               <span>{d.estadoInscripciones}</span>
             </div>
 
             {/* Botones de acción principales */}
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-6 flex w-full max-w-[360px] flex-col items-stretch gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center [&>*]:justify-center">
               <Link className={CTA_LINK_PRIMARY} href={rutaAplicar}>
                 {d.ctaAplicar}
               </Link>
               <button
                 type="button"
-                onClick={() => setPestaña("tracks")}
+                onClick={() => abrirPestaña("tracks", true)}
                 className={CTA_LINK}
               >
                 {d.ctaVerBases}
@@ -232,8 +260,8 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
 
       {/* Los organizadores, en una banda de arena pegada al hero: igual que en /sprint */}
       <section className="bg-aisc-sand">
-        <div className="mx-auto w-full max-w-[1448px] px-8 md:px-16">
-          <div className="flex flex-col gap-5 py-6 sm:flex-row sm:items-center sm:gap-10 md:py-7">
+        <div className="mx-auto w-full max-w-[1448px] px-6 sm:px-8 md:px-16">
+          <div className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:gap-10 md:py-7">
             <p className="text-kicker whitespace-nowrap text-aisc-muted sm:flex-none">
               {idioma === "en"
                 ? "Organized by"
@@ -241,7 +269,7 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
                 ? "Organizam"
                 : "Organizan"}
             </p>
-            <ul className="flex flex-wrap items-center gap-x-12 gap-y-5 sm:ml-auto">
+            <ul className="flex flex-wrap items-center gap-x-7 gap-y-4 sm:ml-auto sm:gap-x-12">
               <li>
                 <Link
                   className="block transition-opacity hover:opacity-60"
@@ -250,7 +278,7 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
                 >
                   <img
                     alt="AI Safety Colombia"
-                    className="max-h-[44px] w-auto object-contain"
+                    className="h-9 w-auto object-contain sm:h-11"
                     decoding="async"
                     src="/aisc/logo-lockup-oscuro.png"
                   />
@@ -266,7 +294,7 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
                 >
                   <img
                     alt="IEEE Computer Society Uniandes"
-                    className="max-h-[58px] max-w-[200px] w-auto object-contain"
+                    className="h-11 w-auto max-w-[170px] object-contain sm:h-[58px] sm:max-w-[200px]"
                     decoding="async"
                     height={167}
                     src="/aisc/aliados/ieee-cs-uniandes.png"
@@ -299,11 +327,14 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
       </section>
 
       {/* ------------------------------------------------ SUBNAV PESTAÑAS ESTILO APART */}
+      <div ref={inicioPestañas} aria-hidden="true" />
+      {/* Se pega justo debajo de la pastilla flotante del sitio (72px / 88px),
+          no en top-0, donde la pastilla la tapaba. */}
       <nav
         aria-label="Secciones del evento"
-        className="sticky top-0 z-40 border-b border-aisc-line bg-white/95 px-6 backdrop-blur-md md:px-12"
+        className={`sticky top-[72px] z-40 border-b border-aisc-line bg-white/95 backdrop-blur-md md:top-[88px] md:px-12 before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-[72px] before:bg-white md:before:h-[88px] ${pegada ? "before:block" : "before:hidden"}`}
       >
-        <div className="mx-auto flex max-w-[860px] items-center justify-start gap-4 overflow-x-auto py-3 no-scrollbar">
+        <div className="mx-auto flex max-w-[860px] items-center justify-start gap-4 overflow-x-auto px-4 py-2.5 no-scrollbar [mask-image:linear-gradient(to_right,black_88%,transparent)] sm:[mask-image:none] md:px-0 md:py-3">
           <div className="flex items-center gap-1 md:gap-2">
             {(
               [
@@ -318,9 +349,9 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
                 <button
                   key={tab.id}
                   type="button"
-                  onClick={() => setPestaña(tab.id)}
+                  onClick={() => abrirPestaña(tab.id)}
                   aria-pressed={activo}
-                  className={`text-body-sm whitespace-nowrap rounded-full px-4 py-2 font-medium transition-all ${
+                  className={`text-body-sm whitespace-nowrap rounded-full px-3.5 py-2 font-medium transition-all md:px-4 ${
                     activo
                       ? "bg-aisc-forest text-aisc-cream shadow-xs"
                       : "text-aisc-muted hover:bg-aisc-sand/60 hover:text-aisc-ink"
@@ -571,7 +602,7 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
                       <article
                         key={tr.id}
                         id={tr.id}
-                        className="scroll-mt-24 rounded-2xl border border-aisc-line bg-white p-6 shadow-xs md:p-8"
+                        className="scroll-mt-40 rounded-2xl border border-aisc-line bg-white p-6 shadow-xs md:p-8"
                       >
                         <div className="flex items-center gap-3">
                           <span className="text-display-3 font-mono font-bold text-aisc-coral">
