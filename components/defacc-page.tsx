@@ -161,6 +161,58 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
                     {d.resumen.retoTexto}
                   </p>
 
+                  {/* Diagrama técnico del ciclo del reto defensivo */}
+                  <div className="mt-8 rounded-2xl border border-aisc-forest/20 bg-aisc-sand/45 p-5 md:p-7">
+                    <span className="text-kicker text-aisc-forest font-bold block mb-4">
+                      {idioma === "en"
+                        ? "Technical Sprint Cycle"
+                        : idioma === "pt"
+                        ? "Ciclo Técnico do Sprint"
+                        : "Ciclo técnico del sprint"}
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                      {[
+                        {
+                          paso: "01",
+                          titulo: idioma === "en" ? "Threat Vector" : idioma === "pt" ? "Vetor de Ameaça" : "Vector de amenaza",
+                          desc: idioma === "en" ? "Identify an active, concrete AI vulnerability or risk" : idioma === "pt" ? "Identificar um risco ou vulnerabilidade real em IA" : "Definir un riesgo o vulnerabilidad real en modelos o agentes",
+                        },
+                        {
+                          paso: "02",
+                          titulo: idioma === "en" ? "Defensive Prototype" : idioma === "pt" ? "Protótipo Defensivo" : "Prototipo defensivo",
+                          desc: idioma === "en" ? "Build verifiable, working code to mitigate or contain it" : idioma === "pt" ? "Construir código funcional que mitigue ou contenha a ameaça" : "Construir código ejecutable que mitigue o contenga el vector",
+                        },
+                        {
+                          paso: "03",
+                          titulo: idioma === "en" ? "Empirical Benchmark" : idioma === "pt" ? "Avaliação Empírica" : "Evaluación empírica",
+                          desc: idioma === "en" ? "Measure effectiveness with datasets, tests, or metrics" : idioma === "pt" ? "Medir eficácia com benchmarks ou testes reproduzíveis" : "Medir efectividad con suite de pruebas o datos reproducibles",
+                        },
+                        {
+                          paso: "04",
+                          titulo: idioma === "en" ? "Safety Verification" : idioma === "pt" ? "Verificação de Segurança" : "Verificación y seguridad",
+                          desc: idioma === "en" ? "Assess safety boundaries and responsible deployment" : idioma === "pt" ? "Verificar limites de segurança e uso responsável" : "Verificar que la defensa no cree riesgos o sesgos secundarios",
+                        },
+                      ].map((item, i) => (
+                        <div key={item.paso} className="relative flex flex-col justify-between rounded-xl border border-aisc-line bg-white p-4 shadow-2xs">
+                          <div>
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="font-mono text-xs font-bold text-aisc-coral">{item.paso}</span>
+                              {i < 3 && (
+                                <span className="hidden lg:block text-aisc-muted/50 text-xs" aria-hidden="true">→</span>
+                              )}
+                            </div>
+                            <h4 className="text-display-4 font-semibold text-aisc-ink mt-2">
+                              {item.titulo}
+                            </h4>
+                            <p className="text-body-sm text-aisc-muted mt-1 leading-snug">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   <h4 className="text-display-4 mt-8 text-aisc-forest">
                     {d.resumen.cuatroRequisitosTitulo}
                   </h4>
