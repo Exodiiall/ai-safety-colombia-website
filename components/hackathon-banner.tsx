@@ -77,10 +77,16 @@ export default function HackathonBanner() {
       />
       <div className="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
         <div className="flex max-w-[740px] flex-col items-start gap-3">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <span className="text-kicker inline-flex items-center whitespace-nowrap rounded-full bg-aisc-coral px-3 py-1 text-[0.6875rem] tracking-[0.06em] text-aisc-cream font-medium shadow-xs sm:text-xs sm:tracking-[0.12em]">
-              {t.badge}
-            </span>
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Fecha y lugar en dos píldoras: en pantallas angostas bajan enteras, sin partir el texto. */}
+            {t.badge.split(" · ").map((parte, i) => (
+              <span
+                key={parte}
+                className={`text-kicker inline-flex items-center whitespace-nowrap rounded-full px-3 py-1 text-[0.6875rem] tracking-[0.08em] font-medium sm:text-xs sm:tracking-[0.12em] ${i === 0 ? "bg-aisc-coral text-aisc-cream shadow-xs" : "border border-aisc-sand/30 text-aisc-sand"}`}
+              >
+                {parte}
+              </span>
+            ))}
             <span className="text-[10px] font-mono tracking-wide text-aisc-sand/75 uppercase sm:text-[11px] sm:tracking-wider">
               AI Safety Colombia × IEEE Uniandes
             </span>
@@ -93,7 +99,7 @@ export default function HackathonBanner() {
           </p>
         </div>
 
-        <div className="flex shrink-0 flex-wrap items-center gap-4">
+        <div className="flex w-full shrink-0 flex-wrap items-center gap-4 sm:w-auto">
           <div className="hidden sm:block shrink-0">
             <Image
               src="/aisc/hackathon/cyberbear.png"
@@ -103,9 +109,9 @@ export default function HackathonBanner() {
               className="object-contain drop-shadow-md"
             />
           </div>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <div className="flex w-full flex-col items-start gap-3 sm:w-auto sm:flex-row sm:items-center">
             <Link
-              className="text-body-sm inline-flex min-h-11 items-center rounded-full bg-aisc-coral px-6 font-medium text-aisc-cream transition-all hover:bg-aisc-coral/90 hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-aisc-sand shadow-sm"
+              className="text-body-sm inline-flex min-h-11 w-full items-center justify-center whitespace-nowrap rounded-full sm:w-auto bg-aisc-coral px-6 font-medium text-aisc-cream transition-all hover:bg-aisc-coral/90 hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-aisc-sand shadow-sm"
               href={rutaEn(idioma, "/defacchackathon")}
             >
               {t.cta}
