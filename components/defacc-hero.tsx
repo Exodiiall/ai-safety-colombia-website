@@ -15,17 +15,19 @@ export default function DefAccHero({ idioma, datos, onTracks }: {
       <div className={styles.siteHeader}><SiteHeader active="/defacchackathon" /></div>
       <section className={styles.banner} aria-labelledby="hackathon-title">
         <div className={styles.bannerPanel}>
-          <p className={styles.eyebrow}><span />{datos.sidebar.fechaValor}</p>
           <p className={styles.coBrand}>{datos.badge}</p>
           <h1 id="hackathon-title" className={styles.bannerTitle}><span>Defensive Acceleration</span><strong>Hackathon</strong></h1>
           <p className={styles.lead}>{datos.lema}</p>
+          <div className={styles.eventDetails}>
+            <p>{datos.sidebar.fechaValor}</p>
+            <p>{datos.sidebar.lugarValor}</p>
+          </div>
           <div className={styles.bannerActions}>
             <button type="button" className={styles.primary} onClick={onTracks}>{datos.ctaVerBases}<span aria-hidden="true">↗</span></button>
             <p className={styles.comingSoon}><span aria-hidden="true" />{datos.ctaAplicar}</p>
           </div>
           <p className={styles.status}>{datos.estadoInscripciones}</p>
         </div>
-        <span className={styles.scrollCue} aria-hidden="true">↓</span>
       </section>
       <DefAccClosing idioma={idioma} />
       <section id="defacc-mascota" className={styles.greeting} aria-labelledby="defacc-mascota-title">

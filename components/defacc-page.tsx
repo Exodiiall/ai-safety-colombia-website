@@ -78,7 +78,8 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
     const contenido = document.getElementById("defacc-contenido");
     const navegacion = document.getElementById("defacc-secciones");
     if (!contenido || !navegacion) return;
-    const espacioSuperior = 88 + navegacion.getBoundingClientRect().height;
+    const altoEncabezado = window.matchMedia("(min-width: 768px)").matches ? 88 : 72;
+    const espacioSuperior = altoEncabezado + navegacion.getBoundingClientRect().height;
     window.scrollTo({
       top: contenido.getBoundingClientRect().top + window.scrollY - espacioSuperior,
       behavior: "instant",
@@ -93,7 +94,7 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
         aria-label="Secciones del evento"
         className={styles.tabs}
       >
-        <div className="mx-auto flex max-w-[860px] items-center justify-start gap-4 overflow-x-auto py-3 no-scrollbar">
+        <div className="mx-auto flex max-w-[860px] items-center justify-start gap-4 overflow-x-auto px-4 py-2.5 no-scrollbar [mask-image:linear-gradient(to_right,black_88%,transparent)] sm:[mask-image:none] md:px-0 md:py-3">
           <div className="flex items-center gap-1 md:gap-2">
             {(
               [
@@ -110,7 +111,7 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
                   type="button"
                   onClick={() => cambiarPestaña(tab.id)}
                   aria-pressed={activo}
-                  className={`text-body-sm whitespace-nowrap rounded-full px-4 py-2 font-medium transition-all ${
+                  className={`text-body-sm whitespace-nowrap rounded-full px-3.5 py-2 font-medium transition-all md:px-4 ${
                     activo
                       ? "bg-aisc-forest text-aisc-cream shadow-xs"
                       : "text-aisc-muted hover:bg-aisc-sand/60 hover:text-aisc-ink"
@@ -321,7 +322,7 @@ export default function DefAccPage({ idioma = "es" }: { idioma?: Idioma }) {
                       <article
                         key={tr.id}
                         id={tr.id}
-                        className="scroll-mt-24 rounded-2xl border border-aisc-line bg-white p-6 shadow-xs md:p-8"
+                        className="scroll-mt-40 rounded-2xl border border-aisc-line bg-white p-6 shadow-xs md:p-8"
                       >
                         <div className="flex items-center gap-3">
                           <span className="text-display-3 font-mono font-bold text-aisc-coral">
