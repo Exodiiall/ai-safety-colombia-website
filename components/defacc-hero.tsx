@@ -16,8 +16,11 @@ export default function DefAccHero({ idioma, datos, onTracks }: {
       <section className={styles.banner} aria-labelledby="hackathon-title">
         <div className={styles.bannerPanel}>
           <p className={styles.coBrand}>{datos.badge}</p>
+          <div className={styles.bannerCopy}>
           <h1 id="hackathon-title" className={styles.bannerTitle}><span>Defensive Acceleration</span><strong>Hackathon</strong></h1>
           <p className={styles.lead}>{datos.lema}</p>
+          </div>
+          <div className={styles.bannerInfo}>
           <div className={styles.eventDetails}>
             <p>{datos.sidebar.fechaValor}</p>
             <p>{datos.sidebar.lugarValor}</p>
@@ -27,6 +30,7 @@ export default function DefAccHero({ idioma, datos, onTracks }: {
             <p className={styles.comingSoon}><span aria-hidden="true" />{datos.ctaAplicar}</p>
           </div>
           <p className={styles.status}>{datos.estadoInscripciones}</p>
+          </div>
         </div>
       </section>
       <DefAccClosing idioma={idioma} />
@@ -47,12 +51,17 @@ export default function DefAccHero({ idioma, datos, onTracks }: {
           { icon: "03", value: datos.sidebar.premiosValor, note: datos.sidebar.comidaValor },
         ].map((fact) => <div key={fact.icon}><span className={styles.factNumber} aria-hidden="true">{fact.icon} /</span><dt>{fact.value}</dt><dd>{fact.note}</dd></div>)}
       </dl>
-      <section className={styles.partners} aria-label={datos.sidebar.organizanRotulo}>
+      <section className={styles.partners}>
+        <div className={styles.partnerGroup}>
         <p className={styles.eyebrow}>{datos.sidebar.organizanRotulo}</p>
         <div className={styles.partnerLogos}>
           <Link href={rutaEn(idioma, "/")}><img src="/aisc/logo-lockup-oscuro.png" width={240} height={70} alt="AI Safety Colombia" /></Link>
           <span aria-hidden="true">×</span>
           <a className={styles.ieeeLogo} href="https://www.instagram.com/csuniandes/" target="_blank" rel="noopener noreferrer"><img src="/aisc/aliados/ieee-cs-uniandes-original.svg" width={560} height={167} alt="IEEE Computer Society Uniandes" /></a>
+        </div>
+        </div>
+        <div className={styles.invitingGroup}>
+          <p className={styles.eyebrow}>{idioma === "en" ? "Invited by" : idioma === "pt" ? "Convida" : "Invita"}</p>
           <a className={styles.universityLogo} href="https://sistemas.uniandes.edu.co/" target="_blank" rel="noopener noreferrer"><img src="/aisc/aliados/uniandes-disc.png" width={2170} height={725} alt="Universidad de los Andes — Departamento de Ingeniería de Sistemas y Computación" loading="lazy" /></a>
         </div>
       </section>

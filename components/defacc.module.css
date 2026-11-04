@@ -118,9 +118,15 @@
   .content > div > div > div { padding: 22px 18px; }
 }
 /* Typographic event poster, using the site's existing type and brand colors. */
-.page { background-image: none; }
-.banner { padding: 80px 48px 64px; background: #f9f7f5; border-bottom: 1px solid #d9e2db; }
-.bannerPanel { max-width: 1168px; margin: 0 auto; padding-left: 32px; border-left: 4px solid #e8590c; }
+.page {
+  background-image: url('/aisc/hackathon/binario-izq.webp'), url('/aisc/hackathon/binario-der.webp'), url('/aisc/hackathon/binario-pattern.svg');
+  background-position: left top, right top, center top;
+  background-repeat: repeat-y, repeat-y, repeat;
+  background-size: clamp(90px, 16vw, 240px) auto, clamp(90px, 16vw, 240px) auto, 520px 460px;
+}
+.banner { padding: 40px 48px; border-bottom: 1px solid #d9e2db; }
+.bannerPanel { max-width: 1168px; margin: 0 auto; padding: 36px 40px; border: 2px solid #183d2a; border-radius: 36px; background: #f9f7f5; box-shadow: 0 6px 0 #183d2a; }
+.bannerCopy, .bannerInfo { min-width: 0; }
 .banner .coBrand { margin: 0; color: #183d2a; font-size: .85rem; line-height: 1.6; }
 .bannerTitle { margin-top: 36px; font-family: var(--font-display); letter-spacing: -.045em; line-height: 1.04; color: #183d2a; }
 .bannerTitle > span { display: block; font-size: clamp(1.65rem, 4.1vw, 3.75rem); font-weight: 500; }
@@ -134,13 +140,24 @@
 .comingSoon { color: #4d5a52; font-size: .85rem; line-height: 1.6; }
 .comingSoon > span { display: none; }
 .banner .status { margin-top: 16px; max-width: 650px; }
+@media (min-width: 1000px) {
+  .bannerPanel { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(270px, 1fr); gap: 28px 36px; align-items: center; }
+  .banner .coBrand { grid-column: 1 / -1; }
+  .bannerTitle { margin-top: 0; }
+  .bannerTitle > span { font-size: clamp(1.8rem, 2.7vw, 2.5rem); }
+  .bannerTitle strong { font-size: clamp(3.4rem, 5.5vw, 5rem); }
+  .banner .lead { margin-top: 20px; font-size: 1.05rem; }
+  .bannerInfo { border-left: 1px solid #183d2a30; padding-left: 32px; }
+  .eventDetails { margin-top: 0; flex-direction: column; gap: 10px; }
+  .bannerActions { margin-top: 24px; gap: 14px; align-items: flex-start; flex-direction: column; }
+}
 .greeting { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 32px; max-width: 1264px; margin: 36px auto 44px; padding: 40px; border: 1px solid #e3c49b; border-radius: 20px; background: #edf3eef2; scroll-margin-top: 100px; }
 .greetingCopy h2 { font: 750 clamp(2rem, 3.1vw, 3rem)/1.08 var(--font-display); color: #183d2a; letter-spacing: -.04em; margin-top: 22px; }
 .greetingCopy > p:last-child { color: #2c2a29; font-size: 1rem; line-height: 1.75; margin-top: 22px; }
 @media (max-width: 1350px) { .greeting { margin-left: 32px; margin-right: 32px; } }
 @media (max-width: 760px) {
-  .banner { padding: 32px 16px 18px; }
-  .bannerPanel { padding-left: 18px; }
+  .banner { padding: 32px 16px; }
+  .bannerPanel { padding: 28px 20px; border-radius: 28px; }
   .bannerTitle { margin-top: 30px; }
   .bannerTitle > span { font-size: clamp(1.5rem, 6vw, 2.8rem); line-height: 1.15; }
   .bannerTitle strong { font-size: clamp(2.4rem, 10.2vw, 5rem); }
@@ -156,12 +173,16 @@
 .closingBear video { display: block; width: min(100%, 460px); aspect-ratio: 848 / 480; object-fit: contain; background: #f9f7f5; border: 1px solid #e3c49b; border-radius: 18px; box-shadow: 7px 7px 0 #f4931e; }
 .partnerLogos { flex-wrap: wrap; justify-content: center; min-width: 0; }
 .partnerLogos .ieeeLogo img { width: 230px; height: 110px; }
-.partnerLogos .universityLogo { flex: 0 1 380px; min-width: 0; }
-.partnerLogos .universityLogo img { display: block; width: 100%; max-width: 380px; height: auto; }
+.partnerGroup { flex: 1 1 0; min-width: 0; }
+.partnerGroup > .eyebrow, .invitingGroup > .eyebrow { margin-bottom: 20px; }
+.partnerGroup .partnerLogos { justify-content: flex-start; }
+.invitingGroup { flex: 0 1 380px; min-width: 0; border-left: 1px solid #d9e2db; padding-left: 32px; }
+.universityLogo { display: block; }
+.universityLogo img { display: block; width: 100%; max-width: 380px; height: auto; }
 @media (max-width: 760px) {
   .partnerLogos .ieeeLogo img { width: 100%; height: 85px; }
-  .partnerLogos .universityLogo { flex: 0 1 100%; }
-  .partnerLogos .universityLogo img { max-width: 380px; margin: auto; height: auto; }
+  .partnerGroup, .invitingGroup { width: 100%; flex: none; }
+  .invitingGroup { border-left: 0; border-top: 1px solid #d9e2db; padding-left: 0; padding-top: 24px; }
 }
 /* Prize amounts retain their contrast and colors while the pointer moves. */
 .content .prizePanel, .content .prizePanel:hover, .content .prizePanel:focus-within {
